@@ -105,7 +105,6 @@ def init_value(n):
 
 # %%
 def frame(queue):
-    print(123)
     ftime = time.time()
     frames = 0
     g = np.array([0.0, -100])
@@ -171,7 +170,9 @@ animation = FuncAnimation(
 
 plt.show()
 
-print(process.is_alive())
+process.is_alive()
 process.terminate()
 process.join()
-print(process.is_alive())
+
+if not process.is_alive():
+    print('All threads have been terminated.')
